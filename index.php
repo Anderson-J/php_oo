@@ -23,3 +23,19 @@ $cli->endereco = "São Paulo";
 $cli->telefone = "(11) 91234-5678";
 
 $cli->comprar();
+
+$nomeClasse = "Cliente";
+
+$instancia = new $nomeClasse;
+var_dump($instancia);
+
+$cli2 = new $cli;
+
+$nomeClasseCli = get_class($cli);
+
+$cli3 = new $nomeClasseCli;
+$cli3->nome = "Maria";
+
+var_dump($cli);
+var_dump($cli2);
+var_dump($cli3);
