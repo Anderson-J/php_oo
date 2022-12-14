@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Classes;
+
 class Fornecedor
 {
     public const PAIS = "Brasil";
