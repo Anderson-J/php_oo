@@ -3,7 +3,7 @@
 function carregar(string $nomeCompleto)
 {
     $namespaceRaiz = "App\\";
-    $diretorioBase = __DIR__ . "/../src";
+    $diretorioBase = __DIR__ . "/../src/";
 
     $tamanhoNamespaceRaiz = strlen($namespaceRaiz);
     
