@@ -6,9 +6,20 @@ use App\Classes\Produto;
 
 class Eletrodomestico extends Produto
 {
+    public string $descricao = "Eletrodoméstico em geral";
     public int $voltagem;
 
-    public function defineVoltagem(int $voltagem)
+    public function __construct(string $titulo)
+    {
+        parent::__construct($titulo);
+    }
+
+    final public function defineCodigoBarras(int $codigo): void
+    {
+        $this->codigoBarras = $codigo;
+    }
+
+    protected function defineVoltagem(int $voltagem)
     {
         if ($voltagem === 110 || $voltagem === 220) {
             $this->voltagem = $voltagem;
@@ -17,7 +28,7 @@ class Eletrodomestico extends Produto
 
     public function detalhes(): void
     {
-        echo "Nome do produto: " . $this->titulo;
-        echo " voltagem: " . $this->voltagem;
+        parent::detalhes();
+        echo "<br>voltagem: " . $this->voltagem;
     }
 }

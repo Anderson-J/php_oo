@@ -3,20 +3,26 @@
 namespace App\Classes;
 
 
-class Microondas extends Eletrodomestico
+final class Microondas extends Eletrodomestico
 {
+    public string $descricao = "Microondas em geral";
     public int $potencia;
+
+    public function __construct(string $titulo, int $voltagem, int $potencia)
+    {
+        parent::__construct($titulo);
+        $this->defineVoltagem($voltagem);
+        $this->definePotencia($potencia);
+    }
 
     public function definePotencia(int $potencia)
     {
-        if ($potencia === 110 || $potencia === 220) {
-            $this->potencia = $potencia;
-        }
+        $this->potencia = $potencia;
     }
 
-    public function mostrar(): void
+    public function detalhes(): void
     {
-        $this->detalhes();
-        echo " Potencia: " . $this->potencia;
+        parent::detalhes();
+        echo "<br>Potencia: " . $this->potencia . "<br>";
     }
 }
