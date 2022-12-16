@@ -2,13 +2,19 @@
 
 namespace App\Classes;
 
-class Pessoa
+abstract class Pessoa
 {
+    protected int $id;
+
     private string $nome;
 
     private int $idade;
 
+    public string $endereco;
+
     private string $telefone;
+
+    abstract public function setId(int $id): void;
 
     public function setNome(string $nome): void
     {
@@ -38,5 +44,15 @@ class Pessoa
     public function getTelefone(): string
     {
         return $this->telefone;
+    }
+
+    public function setEndereco(string $endereco): void
+    {
+        $this->endereco = $endereco;
+    }
+
+    public function getEndereco(): string
+    {
+        return $this->endereco;
     }
 }

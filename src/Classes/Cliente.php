@@ -2,23 +2,16 @@
 
 namespace App\Classes;
 
-class Cliente
+class Cliente extends Pessoa
 {
-    public string $nome;
-    public int $idade;
-    public string $endereco;
-    public string $telefone;
-
-    public function __construct(string $nome, string $telefone, string $idade) //Não podemos atribuir um tipo de retorno no construtor, pois do contrário ocorrerá um erro
+    public function setId(int $id): void
     {
-        $this->nome = $nome;
-        $this->telefone = $telefone;
-        $this->idade = $idade;
+        $id = $id + 1000;
     }
 
     public function __destruct() //o destrutor não pode retornar nada
     {
-        echo "O obj foi destruido";
+        //echo "O obj foi destruido";
     }
 
     public function comprar(): void

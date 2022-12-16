@@ -2,7 +2,12 @@
 
 namespace App\Email\Adaptadores\SES;
 
-class Adaptador
-{
+use App\Email\Adaptadores\AdaptadorBase;
 
+class Adaptador extends AdaptadorBase
+{
+    public function processar(): void
+    {
+        echo "Processado com adaptador SES";
+    }
 }
